@@ -1,3 +1,8 @@
+{{-- @php
+    $orgDate = 'train->arrival_date';
+    $newDate = date("d-m-Y", strtotime($orgDate));
+@endphp --}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -32,7 +37,7 @@
                         <td>{{ $train->departure_station }}</td>
                         <td>{{ $train->arrival_station }}</td>
                         <td>{{ $train->departure_time }}</td>
-                        <td>{{ $train->arrival_date }}</td>
+                        <td>{{ $train->formattedDate }}</td>
                         <td>{{ $train->train_code }}</td>
                         <td>{{ $train->carriages }}</td>
                         <td>{{ $train->in_time ? 'Yes' : 'No' }}</td>
